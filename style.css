@@ -1,0 +1,71 @@
+/* Warmer pages: the app's warm palette, light and dark. */
+:root {
+  --bg: #FFF8F6;
+  --surface: #FFF1EC;
+  --text: #231A17;
+  --muted: #53433F;
+  --accent: #A3401A;
+  --line: #D8C2BC;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1A110F;
+    --surface: #271E1B;
+    --text: #F1DFD9;
+    --muted: #D8C2BC;
+    --accent: #FFB59D;
+    --line: #53433F;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  padding: 2rem 1rem 4rem;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 42rem; margin: 0 auto; }
+
+.brand { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.5rem; }
+.brand svg { width: 3.5rem; height: 3.5rem; flex: none; border-radius: 22%; }
+.brand a { color: inherit; text-decoration: none; }
+.brand .name { font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+.brand .tag { color: var(--muted); font-size: .95rem; }
+
+.langs { font-size: .95rem; color: var(--muted); margin-bottom: 2rem; }
+.langs a { color: var(--accent); }
+
+h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 .3rem; }
+h2 { font-size: 1.2rem; margin: 2rem 0 .4rem; }
+p, ul { margin: 0 0 .9rem; }
+ul { padding-left: 1.3rem; }
+li { margin-bottom: .35rem; }
+a { color: var(--accent); }
+.meta { color: var(--muted); margin-bottom: 1.5rem; }
+
+.summary {
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  border-radius: .5rem;
+  padding: .9rem 1.1rem;
+  margin: 1.2rem 0 1.5rem;
+}
+.summary p:last-child { margin-bottom: 0; }
+
+.button {
+  display: inline-block;
+  background: #A3401A;
+  color: #FFFFFF;
+  padding: .65rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+section + section { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 2.5rem; }
+footer { color: var(--muted); font-size: .9rem; margin-top: 3rem; }
